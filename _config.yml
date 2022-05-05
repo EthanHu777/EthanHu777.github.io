@@ -1,1 +1,8 @@
-theme: jekyll-theme-architect
+# Site 站点配置
+title: Ethan Hu Page #网站标题
+subtitle: I'm lazy #网站副标题
+description: Maybe ok #网栈描述
+author: Ethan Hu #你的名字
+language: zh-CN #网站使用的语言
+timezone: Asia/Shanghai #网站时区
+
