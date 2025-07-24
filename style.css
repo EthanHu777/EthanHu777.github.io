@@ -1110,7 +1110,17 @@ body {
 }
 
 /* 响应式设计 */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* 中等及以上屏幕：4列显示 */
+@media (min-width: 900px) {
+    .info-cards-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 1200px;
+    }
+}
+
+/* 小屏幕平板：2列显示 */
+@media (max-width: 899px) and (min-width: 769px) {
     .info-cards-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
