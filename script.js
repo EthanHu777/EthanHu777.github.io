@@ -87,7 +87,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // 为需要动画的元素添加观察
-document.querySelectorAll('.info-card, .education-card, .experience-card, .project-card, .publication-card, .skill-category, .contact-item').forEach(el => {
+document.querySelectorAll('.info-card, .education-card, .experience-card, .project-card, .publication-card, .skill-category, .achievement-card, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -134,7 +134,7 @@ document.querySelectorAll('.info-card').forEach(card => {
 });
 
 // 项目卡片3D效果
-document.querySelectorAll('.info-card, .project-card, .education-card, .experience-card, .publication-card, .skill-category').forEach(card => {
+document.querySelectorAll('.info-card, .project-card, .education-card, .experience-card, .publication-card, .skill-category, .achievement-card').forEach(card => {
     card.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;

@@ -119,8 +119,8 @@ body {
 }
 
 .highlight {
-    color: #fbbf24;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    color: #60a5fa;
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -178,14 +178,14 @@ body {
 }
 
 .btn-primary {
-    background: #fbbf24;
-    color: #1f2937;
+    background: #60a5fa;
+    color: white;
 }
 
 .btn-primary:hover {
-    background: #f59e0b;
+    background: #3b82f6;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
 }
 
 .btn-secondary {
@@ -250,10 +250,11 @@ body {
 /* 基本信息卡片区域 */
 .info-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 4rem;
-    max-width: 1000px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2rem;
@@ -297,7 +298,7 @@ body {
 .info-card-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -310,7 +311,7 @@ body {
 
 .info-card:hover .info-card-icon {
     transform: rotate(360deg) scale(1.1);
-    box-shadow: 0 10px 20px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.4);
 }
 
 .info-card-content h4 {
@@ -328,19 +329,19 @@ body {
 
 /* 不同卡片的特殊效果 */
 .info-card[data-hover="location"]:hover {
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(99, 102, 241, 0.2));
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(59, 130, 246, 0.2));
 }
 
 .info-card[data-hover="political"]:hover {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.2));
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.2));
 }
 
 .info-card[data-hover="birth"]:hover {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2));
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(147, 51, 234, 0.2));
 }
 
 .info-card[data-hover="membership"]:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(124, 58, 237, 0.2));
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(219, 39, 119, 0.2));
 }
 
 /* 教育经历区域 */
@@ -418,6 +419,78 @@ body {
 .education-card:hover .graduate-badge {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 成就卡片样式 */
+.achievement-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.achievement-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(96, 165, 250, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.achievement-card-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover .achievement-card-icon {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
+}
+
+.achievement-card-content h5 {
+    color: #1f2937;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.achievement-card .achievement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievement-card .achievement-list li {
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.achievement-card .achievement-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    font-weight: bold;
 }
 
 .education-header {
@@ -544,12 +617,12 @@ body {
 }
 
 .tag.scholarship {
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
     color: white;
 }
 
 .tag.honor {
-    background: linear-gradient(45deg, #ef4444, #dc2626);
+    background: linear-gradient(45deg, #34d399, #10b981);
     color: white;
 }
 
