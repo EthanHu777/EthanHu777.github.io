@@ -87,7 +87,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // 为需要动画的元素添加观察
-document.querySelectorAll('.education-card, .experience-card, .project-card, .publication-card, .skill-category, .contact-item').forEach(el => {
+document.querySelectorAll('.info-card, .education-card, .experience-card, .project-card, .publication-card, .skill-category, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -105,8 +105,36 @@ document.querySelectorAll('.skill-tag').forEach(tag => {
     });
 });
 
+// 基本信息卡片特殊效果
+document.querySelectorAll('.info-card').forEach(card => {
+    card.addEventListener('click', function() {
+        // 添加点击波纹效果
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        `;
+
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (rect.width / 2 - size / 2) + 'px';
+        ripple.style.top = (rect.height / 2 - size / 2) + 'px';
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
 // 项目卡片3D效果
-document.querySelectorAll('.project-card, .education-card, .experience-card, .publication-card, .skill-category').forEach(card => {
+document.querySelectorAll('.info-card, .project-card, .education-card, .experience-card, .publication-card, .skill-category').forEach(card => {
     card.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -276,6 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         .scroll-top-btn:hover {
             transform: translateY(-3px) scale(1.1);
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
     `;
     document.head.appendChild(style);
