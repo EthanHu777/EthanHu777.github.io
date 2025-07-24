@@ -1050,10 +1050,44 @@ body {
 
 .contact-item i {
     color: #60a5fa;
-    .hero-info {
-        grid-template-columns: 1fr;
+    font-size: 1.2rem;
+}
+
+.contact-item span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.social-links {
+    display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 1.2rem;
 }
 
 /* 页脚 */
@@ -1301,5 +1335,18 @@ body {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-link i {
+        font-size: 1rem;
     }
 }
