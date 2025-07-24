@@ -725,8 +725,40 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
     background-color: #f3f4f6;
+}
+
+/* 为智能问答数字人项目图片特殊设置，从顶部开始显示 */
+.project-image img[alt*="智能问答数字人"] {
+    object-position: top;
+}
+
+/* 其他图片位置调整选项 */
+.project-image img[alt*="心理大模型"] {
+    object-position: center;
+}
+
+.project-image img[alt*="海洋科技"] {
+    object-position: center;
+}
+
+/* 通用图片位置控制类 */
+.project-image.image-top img {
+    object-position: top;
+}
+
+.project-image.image-bottom img {
+    object-position: bottom;
+}
+
+.project-image.image-left img {
+    object-position: left;
+}
+
+.project-image.image-right img {
+    object-position: right;
 }
 
 .project-image img[loading="lazy"] {
